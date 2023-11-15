@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+            font: arial;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        button {
+            text-align: center;
+            width: 18%;
+            padding: 10px;
+           margin: 5px;
+           font-size: 25px;
+            font: arial;
+            cursor: pointer; 
+            color: purple;
+            
+        }
+        button.operator{
+         background-color: green;
+        }
+
+        #ROTEM {
+            background-color: white;
+            justify-content: center;
+            text-align: center;
+         padding: 20px;
+            border: 20px;
+        }
+    </style>
+<body>
+    <div id="ROTEM">
+        <input type= "text"  id="result"  maxlength="10"   dir="rtl" > 
+        <br>
+      
+   <button onclick="num('7')">7</button>
+   <button onclick="num('8')">8</button>
+   <button onclick="num('9')">9</button>
+   <button onclick="num('*')" class="operator" >x</button>
+   <br>
+   <button onclick="num('4')">4 </button>
+   <button onclick="num('5')">5</button>
+   <button onclick="num('6')">6</button>
+   <button onclick="num('-')" class="operator">-</button>
+   <br>
+   <button onclick="num('1')">1</button>
+   <button onclick="num('2')">2</button>
+   <button onclick="num('3')">3</button>
+   <button onclick="num('+')" class="operator">+</button>
+   <br>
+   <button onclick="clear_result('C')">C</button>
+   <button onclick="num('0')">0</button>
+   <button onclick="equal('=')" class="operator">=</button>
+   <button onclick="num('/')" class="operator">/</button>
+   <br>
+   
+   </div> 
+   <script>
+
+    function num(value){
+if (document.getElementById('result').value.length < 11) {
+            document.getElementById('result').value += value;
+     
+}
+}
+
+function clear_result (){
+
+    result.value = " "
+}
+
+function equal() {
+        try {
+            document.getElementById('result').value = eval(document.getElementById('result').value);
+        } catch (error) {
+            document.getElementById('result').value = 'Error';
+        }
+    }
+</script>
+   
+</body>
+</html>
